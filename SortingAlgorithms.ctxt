@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=SortingAlgorithms
+comment1.params=nums
+comment1.target=void\ bubbleSort(int[])
+comment2.params=nums
+comment2.target=void\ selectionSort(int[])
+comment3.params=nums
+comment3.target=void\ insertionSort(int[])
+comment4.params=nums
+comment4.target=boolean\ isSorted(int[])
+comment5.params=N
+comment5.target=int[]\ generateRandomArray(int)
+comment6.params=N
+comment6.target=int[]\ generateSortedArray(int)
+comment7.params=N
+comment7.target=int[]\ generateReversedArray(int)
+comment8.params=nums
+comment8.target=void\ printArray(int[])
+comment9.params=args
+comment9.target=void\ main(java.lang.String[])
+numComments=10

@@ -1,14 +1,47 @@
 public class SortingAlgorithms
 {
     public static void bubbleSort(int[] nums)
-    {}
+    {
+        while(!isSorted(nums)){
+            for (int i = 0; i <nums.length-1; i++) {
+                if (nums[i]>nums[i+1]) {
+                    int temp = nums[i];
+                    nums[i] = nums[i+1];
+                    nums[i+1] = temp;
+                }
+            }
+        }
+    }
 
     public static void selectionSort(int[] nums)
-    {}
+    {
+        int min = nums[0];
+        int minIndex = 0;
+        int startIndex=0;
+        while (!isSorted(nums))
+        {
+            while(startIndex< nums.length)
+            {
+                for(int i = startIndex; i < nums.length; i++)
+                {
+                    if(nums[i] < min)
+                    {
+                        min = nums[i];
+                        minIndex = i;
+                    }
+                }
+                int temp = nums[minIndex];
+                nums[minIndex] = nums[startIndex];
+                nums[startIndex] = temp;
+                startIndex++;
+            }
+        }
+    }
 
     public static void insertionSort(int[] nums)
-    {}
+    {
 
+    }
     // A helper method for you to check if your sorts work
     private static boolean isSorted(int[] nums){
         for (int i = 0; i < nums.length - 1; i++)
@@ -60,11 +93,11 @@ public class SortingAlgorithms
         System.out.println("Applying the bubble sort.");
 
         long start = System.currentTimeMillis();
-        bubbleSort(testArray);
+        selectionSort(testArray);
         long end = System.currentTimeMillis();
         double sortTime = (end - start) / 1000.0; 
 
-        //printArray(testArray);
+        printArray(testArray);
 
         System.out.format("Time to complete took %.4f seconds.%n", sortTime);
     }
