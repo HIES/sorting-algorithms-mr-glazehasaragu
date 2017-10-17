@@ -18,6 +18,7 @@ public class SortingAlgorithms
         int min = nums[0];
         int minIndex = 0;
         int startIndex=0;
+        int[] temp = new int[nums.length];
         while (!isSorted(nums))
         {
             while(startIndex< nums.length)
@@ -30,12 +31,15 @@ public class SortingAlgorithms
                         minIndex = i;
                     }
                 }
-                int temp = nums[minIndex];
-                nums[minIndex] = nums[startIndex];
-                nums[startIndex] = temp;
+
+                temp[startIndex]= nums[minIndex];
                 startIndex++;
+                nums[minIndex] = Integer.MAX_VALUE;
+                
             }
+            nums = temp;
         }
+        
     }
 
     public static void insertionSort(int[] nums)
